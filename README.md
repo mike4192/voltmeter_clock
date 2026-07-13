@@ -24,18 +24,18 @@ The circuit diagram for the clock is reproduced below from the original blog pos
 
 I used a random 9V wall wart power supply to power the clock and used an adjustable voltage regulator to step it down to 5V. I used an adjustable regulator as I found supplying exactly 5V to the MCU wasn't sufficient to for volt meters to hit the max of their 5V range when driven by the MCU. Through trial and error, I adjusted the voltage input to the MCU until a volt meter hit it's max 5v position, and this took approximately 5.25V input.
 
-The frame was cut from cherry wood. The front holes for the voltmeters were carefully cut with a jigsaw to necessary dimensions. Voltmeters were crudely hotglued in place.
+The frame was cut from cherry wood. The front holes for the voltmeters were carefully cut with a jigsaw to necessary dimensions. Voltmeters were crudely hotglued in place. A box joint jig was used to make finger joints.
 
 ## Code Modification's
 Compared to lcamtuf's original code the following mdofications were made. AI tools were partially used to aid in these modifications.
 * The primary PWM loop driving the voltmeters in the original implementation ran at roughly single digit KHz rates. I found this created an audible high frequency hum from the voltmeters. The PWM driving loop speed was increased to 100 KHz which eliminated the human audible noise.
 * By running the PWM loop faster, however, the PWM duty cycle step resolution decreased to 80 steps. This would cause jerky movements on the second hand if used as-is. To smooth the voltmeter motion back out, a sigma-delta dithering approach was used to artificially emulate a higher step resolution. With how fast the duty cycle loop runs, the resultant second-hand motion is smooth.
-* Functionality was added so that the second-hand falls back more gradually on minute wrap-arounds (to avoid an audible click noise). This function is skipped on hour wrap-arounds, as this then kind of acts like a chime to make one aware of the top of an hour
+* Functionality was added so that the second-hand falls back more gradually on minute wrap-arounds (to avoid an audible noise as the hand hits the end stop). This function is skipped on hour wrap-arounds, as this then kind of acts like a chime to make one aware of the top of an hour
 
 
 ## Other Photos and Diagram
 ![](assets/box_empty.jpg)
 ![](assets/box_back.jpg)
 
-Dimension diagram
+Box dimension diagram
 ![](assets/dimensions.png)
