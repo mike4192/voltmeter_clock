@@ -22,6 +22,8 @@ This MCU used in this clock is a AVR128DA28 as described in the blog post. The M
 The circuit diagram for the clock is reproduced below from the original blog post:
 ![](assets/circuit_diagram.jpg)
 
+The templates in meter_clock_templates.pdf were used to overlay on the meters' original face plates. Templates were simply printed on paper, carefully cut out by hand, and glued onto meter faces with a glue stick. I reccomend doubling the paper layers to avoid seeing the original faceplates, and placing a weight on the templates after the gluing to avoid creases. 
+
 I used a random 9V wall wart power supply to power the clock and used an adjustable voltage regulator to step it down to 5V. I used an adjustable regulator as I found supplying exactly 5V to the MCU wasn't sufficient to for volt meters to hit the max of their 5V range when driven by the MCU. Through trial and error, I adjusted the voltage input to the MCU until a volt meter hit it's max 5v position, and this took approximately 5.25V input.
 
 The frame was cut from cherry wood. The front holes for the voltmeters were carefully cut with a jigsaw to necessary dimensions. Voltmeters were crudely hotglued in place. A box joint jig was used to make finger joints.
