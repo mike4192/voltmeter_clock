@@ -3,6 +3,8 @@ This repo contains source code and description for a voltmeter clock build.
 
 Substantial credit is given to lcamtuf for [his excellent blog post write up](https://lcamtuf.substack.com/p/a-nicer-voltmeter-clock) that inspired this build. The source code is largely based on lcamtuf's original code, with some modifications as described here.
 
+![](assets/clock.jpg)
+
 ## Build Information
 
 * Parts summary:
@@ -18,7 +20,7 @@ Substantial credit is given to lcamtuf for [his excellent blog post write up](ht
 This MCU used in this clock is a AVR128DA28 as described in the blog post. The MCU can be programmed with a dedicated programmer, but I used an Arduino UNO to do so. To do this, I used the Arduino IDE with [DXCore](https://github.com/SpenceKonde/DxCore), and flashing [jtag2udpi](https://github.com/ElTangas/jtag2updi) on the UNO to allow it to act as a programmer. The code can then be flashed via the Arduino IDE.
 
 The circuit diagram for the clock is reproduced below from the original blog post:
-Diagram TODO
+![](assets/circuit_diagram.jpg)
 
 I used a random 9V wall wart power supply to power the clock and used an adjustable voltage regulator to step it down to 5V. I used an adjustable regulator as I found supplying exactly 5V to the MCU wasn't sufficient to for volt meters to hit the max of their 5V range when driven by the MCU. Through trial and error, I adjusted the voltage input to the MCU until a volt meter hit it's max 5v position, and this took approximately 5.25V input.
 
